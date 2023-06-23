@@ -21,8 +21,6 @@ function App() {
         }
     };
 
-    a;
-
     const today = new Date().toDateString();
 
     const options = cryptos
