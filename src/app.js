@@ -97,29 +97,25 @@ function App() {
                 className={styles.logo}
               />
               <h2 className={styles.cryptoName}>{crypto.name}</h2>
-              <div className={styles.cryptoInfo}>
-                <p
-                  className={
-                    crypto.price_change_percentage_24h > 0
-                      ? styles.positive
-                      : styles.negative
-                  }
-                >
-                  {crypto.price_change_percentage_24h.toFixed(2)}% (24h)
-                </p>
-                <div className={styles.iconContainer}>
-                  <AiOutlineDelete
-                    className={styles.deleteIcon}
-                    onClick={() => deleteCard(crypto.id)}
-                  />
-                  <FiEdit2
-                    className={styles.editIcon}
-                    onClick={() =>
-                      editHoldings(crypto.id, prompt("Enter new holdings:"))
-                    }
-                  />
-                </div>
-              </div>
+              <p
+                className={
+                  crypto.price_change_percentage_24h > 0
+                    ? styles.positive
+                    : styles.negative
+                }
+              >
+                {crypto.price_change_percentage_24h.toFixed(2)}% (24h)
+              </p>
+              <AiOutlineDelete
+                className={styles.deleteIcon}
+                onClick={() => deleteCard(crypto.id)}
+              />
+              <FiEdit2
+                className={styles.editIcon}
+                onClick={() =>
+                  editHoldings(crypto.id, prompt("Enter new holdings:"))
+                }
+              />
             </div>
             <div className={styles.holdingsContainer}>
               <h3>Holdings</h3>
